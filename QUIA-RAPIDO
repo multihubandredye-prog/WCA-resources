@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manual VIP - Perguntas Frequentes</title>
+  <title>Manual de Acesso VIP</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-S..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --primary: #6d28d9;
-      --primary-dark: #5b21b6;
-      --bg: #f8f5ff;
+      --primary: #5b21b6;
+      --primary-light: #7c3aed;
+      --text: #1e293b;
+      --text-light: #475569;
+      --bg: #f8fafc;
       --card: #ffffff;
-      --text: #1f2937;
-      --text-light: #4b5563;
-      --border: #e5e7eb;
+      --border: #e2e8f0;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
     }
 
     * {
@@ -26,32 +27,33 @@
       font-family: system-ui, -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.55;
       min-height: 100vh;
     }
 
     .container {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 240px 1fr;
       min-height: 100vh;
     }
 
-    /* Sidebar / Sumário */
+    /* Sidebar */
     .sidebar {
       position: sticky;
       top: 0;
       height: 100vh;
       background: white;
       border-right: 1px solid var(--border);
-      padding: 2rem 1.5rem;
+      padding: 1.8rem 1.2rem;
       overflow-y: auto;
     }
 
     .sidebar h2 {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       color: var(--primary);
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.4rem;
       text-align: center;
+      font-weight: 600;
     }
 
     .nav-list {
@@ -59,177 +61,183 @@
     }
 
     .nav-item {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.4rem;
     }
 
     .nav-link {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 0.9rem 1.2rem;
+      gap: 10px;
+      padding: 0.75rem 1rem;
       color: var(--text-light);
       text-decoration: none;
-      border-radius: 10px;
-      transition: all 0.2s;
+      border-radius: 8px;
+      font-size: 0.96rem;
+      transition: all 0.2s ease;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      background: var(--primary);
+      background: var(--primary-light);
       color: white;
+      transform: translateX(4px);
     }
 
     .nav-link i {
-      font-size: 1.1rem;
-      width: 24px;
+      font-size: 1rem;
+      width: 22px;
       text-align: center;
     }
 
     /* Conteúdo principal */
     .main-content {
-      padding: 2.5rem 3rem;
-      max-width: 900px;
+      padding: 2rem 2.5rem;
+      max-width: 820px;
       margin: 0 auto;
     }
 
     h1 {
-      color: var(--primary-dark);
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
+      font-size: 1.9rem;
+      color: var(--primary);
+      margin-bottom: 1.8rem;
       text-align: center;
+      font-weight: 600;
     }
 
     .section {
       background: var(--card);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.4rem;
       border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
 
     .section h2 {
+      font-size: 1.28rem;
       color: var(--primary);
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-      border-left: 5px solid var(--primary);
-      padding-left: 1rem;
+      margin-bottom: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .section p, .section li {
+      font-size: 0.98rem;
       color: var(--text-light);
-      font-size: 1.05rem;
     }
 
     .section ul {
-      margin: 1rem 0 1rem 1.8rem;
+      margin: 0.8rem 0 0.8rem 1.4rem;
       list-style: none;
     }
 
     .section ul li {
       position: relative;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.45rem;
     }
 
     .section ul li::before {
-      content: "→";
+      content: "•";
       color: var(--primary);
       position: absolute;
-      left: -1.6rem;
-      font-weight: bold;
+      left: -1.2rem;
+      font-size: 1.3rem;
     }
 
     .highlight {
       background: #f3e8ff;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-      font-family: monospace;
-      color: #6d28d9;
+      padding: 0.15rem 0.4rem;
+      border-radius: 5px;
+      font-family: 'Consolas', monospace;
+      color: var(--primary);
+      font-size: 0.95rem;
     }
 
-    .price-table {
+    .price-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1.2rem 0;
     }
 
-    .price-card {
-      background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-      border-radius: 12px;
-      padding: 1.4rem;
+    .price-item {
+      background: #f8f5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 8px;
+      padding: 1rem 0.8rem;
       text-align: center;
-      border: 2px solid var(--primary);
     }
 
-    .price-card .duration {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: var(--primary-dark);
-      margin-bottom: 0.6rem;
+    .price-item .dur {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
     }
 
-    .price-card .value {
-      font-size: 2rem;
+    .price-item .val {
+      font-size: 1.45rem;
+      font-weight: 700;
       color: #4c1d95;
-      font-weight: 800;
     }
 
     /* Responsividade */
-    @media (max-width: 900px) {
+    @media (max-width: 850px) {
       .container {
         grid-template-columns: 1fr;
       }
-
       .sidebar {
         position: relative;
         height: auto;
         border-right: none;
         border-bottom: 1px solid var(--border);
-        padding-bottom: 1rem;
+        padding: 1.2rem;
       }
-
       .main-content {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem;
       }
     }
 
-    @media (max-width: 500px) {
-      h1 { font-size: 2rem; }
-      .section h2 { font-size: 1.4rem; }
-      .price-card .value { font-size: 1.7rem; }
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6rem; }
+      .section h2 { font-size: 1.15rem; }
+      .price-item .val { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Sumário lateral -->
   <aside class="sidebar">
     <h2>Manual VIP</h2>
     <ul class="nav-list">
-      <li class="nav-item"><a href="#comprar" class="nav-link"><i class="fas fa-shopping-cart"></i> Como comprar o VIP?</a></li>
-      <li class="nav-item"><a href="#duracao" class="nav-link"><i class="fas fa-clock"></i> Duração do acesso</a></li>
-      <li class="nav-item"><a href="#valores" class="nav-link"><i class="fas fa-money-bill-wave"></i> Valores</a></li>
+      <li class="nav-item"><a href="#comprar" class="nav-link"><i class="fas fa-shopping-cart"></i> Comprar VIP</a></li>
+      <li class="nav-item"><a href="#duracao" class="nav-link"><i class="fas fa-clock"></i> Duração</a></li>
+      <li class="nav-item"><a href="#valores" class="nav-link"><i class="fas fa-money-bill"></i> Valores</a></li>
       <li class="nav-item"><a href="#reembolso" class="nav-link"><i class="fas fa-ban"></i> Reembolso</a></li>
-      <li class="nav-item"><a href="#nao-funciona" class="nav-link"><i class="fas fa-bug"></i> VIP não funciona?</a></li>
-      <li class="nav-item"><a href="#numero" class="nav-link"><i class="fas fa-phone"></i> Como cadastrar o número</a></li>
+      <li class="nav-item"><a href="#problemas" class="nav-link"><i class="fas fa-tools"></i> Não funciona?</a></li>
+      <li class="nav-item"><a href="#numero" class="nav-link"><i class="fas fa-phone-alt"></i> Cadastro do número</a></li>
     </ul>
   </aside>
 
-  <!-- Conteúdo principal -->
   <main class="main-content">
-    <h1>Perguntas Frequentes – Acesso VIP</h1>
+    <h1>Manual de Acesso VIP</h1>
 
     <div class="section" id="comprar">
-      <h2>🛒 Como comprar o modo VIP?</h2>
-      <p>Clique no botão <strong>"Comprar VIP"</strong>, insira suas informações pessoais (nome e número de telefone) e envie para o desenvolvedor.</p>
-      <p>Ele realizará o procedimento de compra e ativará seu acesso em breve.</p>
+      <h2><i class="fas fa-shopping-cart"></i> Como comprar o VIP?</h2>
+      <p>Clique em <strong>"Comprar VIP"</strong>, informe nome e número de telefone e envie ao desenvolvedor. O acesso será ativado após confirmação.</p>
     </div>
 
     <div class="section" id="duracao">
-      <h2>⏳ Qual é a duração do acesso VIP?</h2>
-      <p>O acesso VIP pode ser contratado conforme sua preferência, com as seguintes opções de período:</p>
+      <h2><i class="fas fa-clock"></i> Duração do acesso VIP</h2>
       <ul>
         <li>30 dias</li>
         <li>90 dias</li>
@@ -238,77 +246,52 @@
     </div>
 
     <div class="section" id="valores">
-      <h2>💰 Quais são os valores?</h2>
-      <p>Os preços variam de acordo com o período escolhido:</p>
-      
-      <div class="price-table">
-        <div class="price-card">
-          <div class="duration">30 dias</div>
-          <div class="value">R$ 50,00</div>
+      <h2><i class="fas fa-money-bill"></i> Valores</h2>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="dur">30 dias</div>
+          <div class="val">R$ 50,00</div>
         </div>
-        <div class="price-card">
-          <div class="duration">90 dias</div>
-          <div class="value">R$ 120,00</div>
+        <div class="price-item">
+          <div class="dur">90 dias</div>
+          <div class="val">R$ 120,00</div>
         </div>
-        <div class="price-card">
-          <div class="duration">1 ano</div>
-          <div class="value">R$ 450,00</div>
+        <div class="price-item">
+          <div class="dur">1 ano</div>
+          <div class="val">R$ 450,00</div>
         </div>
       </div>
     </div>
 
     <div class="section" id="reembolso">
-      <h2>🔄 Tenho direito a reembolso?</h2>
-      <p><strong>Não, o reembolso não será concedido.</strong></p>
-      <p>Isso ocorre devido às constantes atualizações do WhatsApp e ao uso de uma API não oficial, que pode exigir ajustes frequentes. Recomendamos aguardar as atualizações realizadas pelo desenvolvedor.</p>
+      <h2><i class="fas fa-ban"></i> Política de reembolso</h2>
+      <p><strong>Não há reembolso.</strong> Devido a atualizações frequentes do WhatsApp e uso de API não oficial, o serviço exige manutenção constante.</p>
     </div>
 
-    <div class="section" id="nao-funciona">
-      <h2>❓ Estou no modo VIP e meu programa não está funcionando. Por quê?</h2>
-      <p>1. Verifique se o sistema está atualizado clicando no botão de atualização.</p>
-      <p>2. Caso o problema persista, realize uma <strong>reinstalação no modo reset</strong> para uma instalação limpa.</p>
+    <div class="section" id="problemas">
+      <h2><i class="fas fa-tools"></i> VIP ativo, mas não funciona?</h2>
+      <p>1. Clique no botão de atualização do sistema.<br>2. Se persistir, faça uma <strong>reinstalação no modo reset</strong>.</p>
     </div>
 
     <div class="section" id="numero">
-      <h2>📱 Como devo adicionar meu número no cadastro?</h2>
-      <p>O número de telefone deve ser informado <strong>contendo obrigatoriamente</strong>:</p>
-      <ul>
-        <li>Código do país</li>
-        <li>DDD</li>
-        <li>Número do celular com nove dígitos</li>
-      </ul>
-      <p><strong>Apenas números</strong>, sem espaços, parênteses, traços ou outros símbolos.</p>
-
-      <p><strong>Exemplos corretos:</strong></p>
-      <p><span class="highlight">5511999999999</span></p>
-      <p><span class="highlight">5581988887777</span></p>
-
-      <p><strong>Estados onde o 9º dígito é obrigatório:</strong></p>
-      <ul>
-        <li>São Paulo (SP)</li>
-        <li>Rio de Janeiro (RJ)</li>
-        <li>Minas Gerais (MG)</li>
-        <li>Bahia (BA)</li>
-        <li>Paraná (PR)</li>
-      </ul>
-      <p>O formato correto evita falhas no cadastro, erros de conexão e problemas na validação.</p>
+      <h2><i class="fas fa-phone-alt"></i> Formato correto do número</h2>
+      <p>Use apenas números, com código do país + DDD + 9 dígitos (obrigatório em SP, RJ, MG, BA, PR, etc.).</p>
+      <p><strong>Exemplos:</strong> <span class="highlight">5511999999999</span>  ou  <span class="highlight">5581988887777</span></p>
+      <p>Formato incorreto causa falhas de cadastro e conexão.</p>
     </div>
   </main>
 </div>
 
 <script>
-// Destacar item do menu ao rolar a página
+// Highlight do menu ao rolar
 const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks  = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
   let current = '';
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (scrollY >= sectionTop - 200) {
-      current = section.getAttribute('id');
-    }
+  sections.forEach(sec => {
+    const top = sec.offsetTop;
+    if (scrollY >= top - 180) current = sec.getAttribute('id');
   });
 
   navLinks.forEach(link => {
