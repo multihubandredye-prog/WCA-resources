@@ -1,0 +1,51 @@
+🛒 Como comprar o modo VIP?
+
+Clique no botão "Comprar VIP", insira suas informações pessoais (nome e número de telefone) e envie para o desenvolvedor. Ele realizará o procedimento de compra e ativará seu acesso.
+
+⏳ Qual é a duração do acesso VIP?
+
+O acesso VIP pode ser contratado conforme a preferência do usuário, com as seguintes opções de período disponíveis:
+
+- 30 dias
+- 90 dias
+- 1 ano
+
+💰 Quais são os valores?
+
+Os valores do acesso VIP variam de acordo com o período selecionado:
+
+- 30 dias: R$ 50,00
+- 90 dias: R$ 120,00
+- 1 ano: R$ 450,00
+
+🔄 Tenho direito a reembolso?
+
+Não, o reembolso não será concedido.
+Isso se deve às constantes atualizações do WhatsApp e ao uso de uma API não oficial, que pode exigir ajustes frequentes. Recomendamos aguardar as atualizações realizadas pelo desenvolvedor.
+
+❓ Estou no modo VIP e meu programa não está funcionando. Por quê?
+
+Verifique se o sistema está atualizado clicando no botão de atualização. Caso o problema persista, realize uma reinstalação no modo reset para uma instalação limpa.
+
+📱 Como devo adicionar meu número no cadastro?
+
+O número de telefone deve ser informado contendo obrigatoriamente:
+- Código do país
+- DDD
+- Número do celular com nove dígitos
+
+O cadastro deve ser realizado utilizando apenas números, sem o uso de símbolos, espaços, parênteses ou sinais especiais.
+
+Exemplos de formato correto:
+5511999999999
+5581988887777
+
+Exemplos de estados onde o uso do nono dígito é obrigatório e indispensável para o correto funcionamento em APIs não oficiais:
+
+- São Paulo (SP)
+- Rio de Janeiro (RJ)
+- Minas Gerais (MG)
+- Bahia (BA)
+- Paraná (PR)
+
+A utilização do formato correto evita falhas no cadastro, erros de conexão e problemas na validação do número junto aos serviços integrados.
